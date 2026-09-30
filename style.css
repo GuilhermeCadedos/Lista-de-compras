@@ -1,14 +1,14 @@
 main {
     background-color: #f5f5f5;
-    max-width: 85.56rem;
-    width: 80.56rem;
-    max-height: 122.88rem;
-    height: 40rem;
+    width: min(100%, 80.56rem);
+    min-height: 40rem;
+    height: auto;
     border-radius: 1rem;
+    padding: 1rem;
 }
 
 #logo {
-    margin-top: 1rem;
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,8 +18,8 @@ main {
 #voltar {
     display: flex;
     align-items: center;
-    margin-left: 24rem;
-    margin-top: 4.5rem;
+    width: min(100%, 38rem);
+    margin: 4.5rem auto 0;
     gap: 0.5rem;
     font-size: var(--font-size-link);
 
@@ -31,21 +31,29 @@ main {
     cursor: pointer;
 }
 
+form {
+    width: min(100%, 38rem);
+    margin: 0 auto;
+}
+
 form h1 {
-    margin-left: 23.7rem;
+    margin-left: 0;
     margin-top: 1rem;
     font-size: var(--font-size-title);
 }
 
 #input {
-    margin-left: 23.7rem;
+    width: 100%;
+    margin-left: 0;
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
 }
 
 #input-shopping {
-    width: 30rem;
+    width: auto;
+    min-width: 0;
+    flex: 1;
     height: 2.5rem;
     border-radius: 0.8rem;
     border: 3px solid var(--border-primary);
@@ -66,6 +74,7 @@ form h1 {
 
 #add-item {
     width: 10rem;
+    flex: 0 0 10rem;
     height: 2.8rem;
     border-radius: 0.8rem;
     font-size: var(--font-size-label);
@@ -80,8 +89,8 @@ form h1 {
 }
 
 .list {
-    margin-left: 23.7rem;
-    margin-top: 2rem;
+    width: min(100%, 38rem);
+    margin: 2rem auto 0;
 }
 
 .list li div {
@@ -96,7 +105,8 @@ form h1 {
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    margin-right: 23.7rem;
+    width: 100%;
+    margin: 0;
     gap: 1rem;
     font-size: var(--font-size-paragraph);
     background-color: var(--background-secondary);
@@ -154,12 +164,11 @@ form h1 {
 }
 
 .mensagemAlerta {
-    width: 38rem;
+    width: min(100%, 38rem);
     background-color: var(--color-danger);
     display: flex;
     align-items: center;
-    margin-left: 23.7rem;
-    margin-top: 8rem;
+    margin: 2rem auto 0;
     height: 2.75rem;
     border-radius: .5rem .8rem;
     justify-content: space-between;
@@ -191,4 +200,49 @@ form h1 {
 
 .mensagemAlerta.visivel {
     display: flex;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 1rem;
+    }
+
+    #voltar {
+        margin-top: 1.5rem;
+    }
+
+    form h1 {
+        margin-top: 1.5rem;
+    }
+
+    #input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #input-shopping,
+    #add-item {
+        width: 100%;
+        flex: none;
+    }
+
+    #add-item {
+        height: 2.8rem;
+    }
+
+    .list {
+        margin-top: 2rem;
+    }
+
+    .list li {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .mensagemAlerta {
+        margin-top: 2rem;
+    }
 }
