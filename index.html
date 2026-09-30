@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main>
+      <div id="logo">
+        <img src="./assets/logo.svg" alt="" />
+        <h1>quicklist</h1>
+      </div>
+      <div id="voltar">
+        <img src="./assets/seta-voltar.svg" alt="" />
+        <a href="#">Voltar</a>
+      </div>
+
+      <form id="shopping-form">
+        <h1>Compras da Semana</h1>
+
+        <div id="input">
+          <input
+            type="text"
+            id="input-shopping"
+            placeholder="Adicione um novo item"
+          />
+          <button id="add-item">Adicionar Item</button>
+        </div>
+      </form>
+
+      <section class="list">
+        <ul id="shopping-list">
+          <li>
+            <div>
+              <input type="checkbox" />
+              <span>Pão de forma</span>
+            </div>
+            <button type="button" class="remove-item">
+              <img src="./assets/icone-lixeira.svg" alt="" />
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section class="mensagemAlerta">
+        <div>
+          <img src="./assets/icone-alerta.svg" alt="" />
+          <span>O item foi removido da lista</span>
+        </div>
+        <button type="button" class="fecharAlerta">
+          <img src="./assets/icone-excluir-mensagem.svg" alt="" />
+        </button>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
